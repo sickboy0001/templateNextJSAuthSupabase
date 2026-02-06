@@ -32,7 +32,7 @@
 - [履歴](#履歴)
 
 
-# hadbit-fastapi
+# templateNextJsAuthSupabase
 
 React NextJS Vercel Supabaseでの構成想定
 
@@ -45,7 +45,7 @@ React NextJS Vercel Supabaseでの構成想定
 
 ## 🛠 技術スタックと選定理由
 
-base:PFXDGRSbase
+
 
 |技術要素|役割・選定理由|
 |-|-|
