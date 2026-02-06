@@ -84,7 +84,10 @@ base:PFXDGRSbase
   - globals.css
   - layout.tsx
   - pages.tsx
-  - `(user)`: 個人認証済みのページ
+  - `(auth)`: 認証周りの処理
+    - login/:ログイン処理
+    - signup/:新規でユーザー登録の登録用の画面
+  - `(user)`: 認証済みのページ
     - dashboard/:ダッシュボード
       - page.tsx: 入り口のサーバーコンポーネント
     - logs/:習慣化の記録の確認
@@ -92,6 +95,9 @@ base:PFXDGRSbase
     - items/:習慣化のマスタの確認
       - page.tsx: 入り口のサーバーコンポーネント
 - `src/components/`: 再利用可能なUIコンポーネント
+  - auth/:認証周り
+    - login:ログイン処理
+    - signup:新規でユーザー登録の登録用の画面
   - layout/:Atomicデザインのlayoutでのコンポーネント
   - organisms/:Atomicデザインのorganismsでのコンポーネント
   - pages/:各ページから呼び出させる場所
@@ -103,14 +109,18 @@ base:PFXDGRSbase
   - utilNumber.ts
   - utilDate.ts
   - supabase/:Supabase周り
-    - client.ts: createBrowserClient
-    - supbabase.ts:reateClient(supabaseUrl, supabaseAnonKey);
-    - supbabaseadmin:createxxxxAdminClient
-    - supabaseServer:supabaseAnonKeyからユーザーゲット
+    - auth.ts
+    - db.ts
 - `src/middleware.ts`: 認証状態に基づいたリダイレクト制御
 
 
 ---
+以下未使用
+    - client.ts: createBrowserClient
+    - supbabase.ts:reateClient(supabaseUrl, supabaseAnonKey);
+    - supbabaseadmin:createxxxxAdminClient
+    - supabaseServer:supabaseAnonKeyからユーザーゲット
+
 
 ## 🚢 デプロイフロー
 
