@@ -50,7 +50,7 @@ export function AuthForm() {
           },
         }}
         // 使用したいプロバイダーを配列で指定（事前にSupabaseダッシュボードで有効化が必要）
-        providers={[]}
+        providers={["google"]}
         redirectTo={`${typeof window !== "undefined" ? window.location.origin : ""}/auth/callback`}
         localization={{
           variables: {

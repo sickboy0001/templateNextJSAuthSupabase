@@ -43,19 +43,13 @@ React NextJS Vercel Supabaseでの構成想定
 
 ---
 
-## 🛠 技術スタックと選定理由
+## 🛠 技術スタック
 
 
-
-|技術要素|役割・選定理由|
-|-|-|
-|**Python / FastAPI**|サーバーサイドの主軸。Router/Service層を分けたクリーンな構成の学習と実践。|
-|**htmx**|フロントエンドのUX向上。HTMLベースで動的な非同期通信を実現し、複雑さを軽減。|
-|**DaisyUI (Tailwind CSS)**|UIコンポーネントライブラリ。直接CSSを書く手間を省き、一貫したデザインを迅速に構築。|
-|**Docker**|環境のポータビリティ確保。Render以外のホスト環境への移行も容易にするため。|
-|**Render**|サーバーサイドおよびDockerとの親和性が高く、Vercel以外の有力な選択肢として採用。|
-|**kyoeb**|Renderだと重いので回避|
-|**Supabase**|データベース(PostgreSQL)および認証基盤(Auth)として利用。|
+- フロントエンド: React, Next.js, TypeScript
+- UI: Tailwind CSS, shadcn/ui
+- データベース: Supabase
+- デプロイ: Vercel
 
 ---
 
@@ -114,22 +108,6 @@ React NextJS Vercel Supabaseでの構成想定
 - `src/middleware.ts`: 認証状態に基づいたリダイレクト制御
 
 
----
-以下未使用
-    - client.ts: createBrowserClient
-    - supbabase.ts:reateClient(supabaseUrl, supabaseAnonKey);
-    - supbabaseadmin:createxxxxAdminClient
-    - supabaseServer:supabaseAnonKeyからユーザーゲット
-
-
-## 🚢 デプロイフロー
-
-Koyeb/Renderを利用したCI/CDが自動化されています。
-
-1. **GitHubへPush**: `main` ブランチへコードをプッシュ。
-2. **ビルド**: Renderがリポジトリの `Dockerfile` を検知し、Dockerイメージをビルド。
-3. **自動デプロイ**: ビルド成功後、Web Serviceとして自動デプロイ。
-4. **環境変数管理**: Render Dashboardおよびローカルの `.env` で秘匿情報を管理。
 
 ---
 
@@ -178,5 +156,8 @@ export default async function Page() {
 Supabaseの設定画面にある Transaction mode (ポート 6543) のURLを使ってください。Next.jsはサーバーレス環境（Vercelなど）で動くため、接続数が急増してもパンクしないようにするためです。
 
 # 履歴
+- 2026/2/7
+  - README.MD更新　不要なもの削除
+  - AuthForm見直し、Google部分  
 - 2026/2/7
   - テンプレートにして、今後利用可能に。  
