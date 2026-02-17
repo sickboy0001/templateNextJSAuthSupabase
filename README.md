@@ -152,8 +152,16 @@ export default async function Page() {
 ```
 
 ###　注意点
+####　注意点
 接続先URL（Connection String）:
 Supabaseの設定画面にある Transaction mode (ポート 6543) のURLを使ってください。Next.jsはサーバーレス環境（Vercelなど）で動くため、接続数が急増してもパンクしないようにするためです。
+
+####　Supabase+GoogleLogin
+
+- Supabase へ追加
+  - Supabase->Authentication->URLConfigurateion->RedirectUrl
+  - https://xxx.vercel.app/auth/callback
+
 
 # 履歴
 - 2026/2/7
